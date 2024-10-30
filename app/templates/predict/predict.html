@@ -1,0 +1,71 @@
+{% extends 'predict/base.html' %}
+<!-- Apply Templates -->
+
+{% block title1 %}Model Train Calculation Page{% endblock %}
+<!-- 'block title1', names should correspond to each other-->
+
+{% block content1 %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Train Calculation Page</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<h2> Model Train</h2>
+  <form action='#' method='post'>
+      <!-- '#' mean that stay on the same page -->
+      <!-- input values -->
+      <table class="table w-75">
+          <tr>
+            <td><b>Source data(ETTh1 or Shenzhen):</b></td>
+            <td><input type="text" name="Source_data" class="form-control" value="{{ Source_data if Source_data }}"></td>
+          </tr>
+          <tr>
+            <td><b>Prediction length:</b></td>
+            <td><input type="text" name="Prediction_length" class="form-control" value="{{ Prediction_length if Prediction_length }}"></td>
+          </tr>
+          <tr>
+            <td><b>Window size:</b></td>
+            <td><input type="text" name="Window_size" class="form-control" value="{{ Window_size if Window_size }}"></td>
+          </tr>
+          <tr>
+            <td><b>Feature:</b></td>
+            <td><input type="text" name="Feature" class="form-control" value="{{ Feature if Feature }}"></td>
+          </tr>
+          <tr>
+            <td><b>Model:</b></td>
+            <td><input type="text" name="Model" class="form-control" value="{{ Model if Model }}"></td>
+          </tr>
+      </table>
+      <p>
+        <input type='submit' class="btn btn-secondary" value='Compute' onclick="alert('The prediction will use the model trained most recently, please make sure your model has been trained.')">
+      </p>
+
+      <!-- output -->
+      <h1>Output</h1>
+      <!-- Plotly Loss Curve -->
+      <h2>Predict Cruve</h2>
+      <div id='loss_plot'></div>
+          
+      <script>
+          var fig = {{ loss_plot | safe }};
+          Plotly.newPlot('loss_plot', fig);
+      </script>
+
+      <p><i>You can click <a href="https://www.bilibili.com/video/BV1n6421u7HV/?spm_id_from=333.337.search-card.all.click"><u>here</u></a> to return to Home Index</i></p>
+  </form>
+</body>
+</html>
+<h4>
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for i in messages %}
+              <p>{{i}}</p>
+          {% endfor %}
+      {% endif %}
+  {% endwith %}
+  <!-- return a flash message -->
+</h4>
+
+{% endblock %}

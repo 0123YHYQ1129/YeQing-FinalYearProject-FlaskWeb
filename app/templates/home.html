@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Define the character set and viewport -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Link to the favicon and the stylesheet -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/Ye-ico.ico' ) }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <!-- Load Bootstrap CSS -->
+    {% block styles %}
+        {{ bootstrap.load_css() }}
+    {% endblock %}
+
+    <!-- Set the title of the webpage -->
+    <title>
+        {% block title %}
+        YeQing-TrafficFlowPrediction
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Display the banner -->
+        <div class="banner">
+            Welcome to YeQing-TrafficFlowPrediction
+        </div>
+
+        <!-- Display the logo -->
+        <div class="picture-container">
+            <img src="{{ url_for('static', filename='images/Ye-ico.ico') }}" alt="logo" class="picture">
+        </div>
+
+        <!-- Display the button -->
+        <div class="button-container">
+            <a class="btn btn-primary ms-2" style="background-color: #FFA500; border-color: #FFA500; color: #00008B; font-weight: bold; font-size: 20px;" href="{{ url_for('train.train_function') }}">Go to Functional Models</a>
+        </div>
+    </div>
+
+    <!-- Display the page content -->
+    {% block content %}
+    {% endblock %}
+
+    {% block app_content %}
+    {% endblock %}
+
+    <!-- Display the footer -->
+    <div class="footer">
+         2023.12 YeQing, NUS (Suzhou) Research Institute
+    </div>
+
+    <!-- Load Bootstrap JavaScript files -->
+    {% block scripts %}
+        {{ bootstrap.load_js() }}
+    {% endblock %}
+</body>
+
+</html>

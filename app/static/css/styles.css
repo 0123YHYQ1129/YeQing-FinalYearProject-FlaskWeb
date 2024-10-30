@@ -1,0 +1,115 @@
+/* Style for the body element */
+body {
+    font-family: Arial, sans-serif;  /* Font family */
+    background: url('../images/background.jpg');  /* Background image */
+    background-size: cover;  /* Background image covers the entire container */
+    margin: 0;  /* Margin */
+    display: flex;  /* Display type */
+    flex-direction: column;  /* Flex direction */
+    justify-content: center;  /* Horizontal alignment */
+    align-items: center;  /* Vertical alignment */
+    overflow: auto;  /* Overflow */
+    position: relative;  /* Position */
+    height: 100%;  /* Height */
+}
+
+
+/* Style for the banner element */
+.banner {
+    position: absolute;  /* Position */
+    top: 50px;  /* Distance from the top */
+    left: 0;  /* Distance from the left */
+    width: 100%;  /* Width */
+    text-align: center;  /* Text alignment */
+    font-size: 40px;  /* Font size */
+    font-weight: bold;  /* Font weight */
+    color: rgb(255, 255, 255);  /* Text color */
+    padding: 8px;  /* Padding */
+    box-sizing: border-box;  /* Box sizing */
+    -webkit-animation:bounce 2s infinite;/*设置动画*/
+    -webkit-text-stroke: 2px black; /*设置字体边缘线为黑色*/}        
+  @-webkit-keyframes bounce{/*创建动画*/
+    0%,100%,20%,50%,80%{
+        -webkit-transform:translateY(0);
+    }40%{
+        -webkit-transform:translateY(-30px);
+    }60%{
+        -webkit-transform:translateY(-15px);
+    }
+}
+
+/* Style for the container element */
+.container {
+    display: flex;  /* Display type */
+    justify-content: center;  /* Horizontal alignment */
+}
+
+/* Style for the button-container element */
+.button-container {
+    position: absolute;  /* Position */
+    top: 580px;  /* Distance from the top */
+    display: flex;  /* Display type */
+    justify-content: center;  /* Horizontal alignme
+    nt */
+    margin-top: 20px;  /* Margin at the top */
+}
+
+/* Style for the message-container element */
+.message-container {
+    position: absolute;  /* Position */
+    top: 500px;  /* Distance from the top */
+    display: flex;  /* Display type */
+    justify-content: center;  /* Horizontal alignment */
+}
+
+/* Style for the logo-container element */
+.logo-container {
+    position: fixed;  /* Position */
+    top: 0px;  /* Distance from the top */
+    right: 0;  /* Distance from the right */
+    z-index: 1000;  /* Stack order */
+    max-width: 150px;  /* Maximum width */
+    max-height: 75px;  /* Maximum height */
+}
+
+/* Style for the logo element */
+.logo {
+    max-width: 80%;  /* Maximum width */
+    height: auto;  /* Height */
+    background-color: white;  /* Background color */
+    padding: 1px  /* Padding */
+}
+
+/* Style for the picture-container element */
+.picture-container {
+    width: 80%;  /* Width */
+    max-width: 750px;  /* Maximum width */
+    margin: 200px auto 20px auto;  /* Margin */
+}
+
+/* Style for the picture element */
+.picture {
+    width: 100%;  /* Width */
+    height: auto;  /* Height */
+    opacity: 0.85;  /* Opacity */
+}
+
+/* Style for the text-container element */
+.text-container {
+    display: flex;  /* Display type */
+    flex-direction: column;  /* Flex direction */
+    justify-content: flex-end;  /* Horizontal alignment */
+    align-items: center;  /* Vertical alignment */
+    height: 450px;  /* Height */
+}
+
+/* Style for the footer element */
+.footer {
+    text-align: center;  /* Text alignment */
+    background-color: #002C14;  /* Background color */
+    color: white;  /* Text color */
+    padding: 15px;  /* Padding */
+    position: fixed;  /* Position */
+    bottom: 0;  /* Distance from the bottom */
+    width: 100%;  /* Width */
+}

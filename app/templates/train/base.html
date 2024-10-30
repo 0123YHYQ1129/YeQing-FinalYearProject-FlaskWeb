@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/Ye-ico.ico' ) }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    {% block title %}
+    YeQing-TrafficFlowPrediction Functional Models
+    {% endblock %}
+  </title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  {% block styles %}
+    {{ bootstrap.load_css() }}
+  {% endblock %}
+</head>
+
+<body>
+    {% from 'bootstrap5/nav.html' import render_nav_item %}
+    <div class="container px-4">
+        <nav class="navbar navbar-expand-lg" style="background-color: #007BC0;">
+          <div class="container-fluid">
+            <a class="navbar-brand" style="color: #ffffff;" >Landing</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <ul class="nav nav-underline">
+                <a class="nav-link" style="color: #ffffff;" href="{{ url_for('home') }}"> Home </a>
+                <a class="nav-link" style="color: #ffffff;" href="{{ url_for('train.train_function') }}"> Train </a>
+                <a class="nav-link" style="color: #ffffff;" href="{{ url_for('predict.predict_function') }}"> Predict </a>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    
+      <hr style="margin-top: 20px; margin-bottom: 30px; height: 2px; border: none; background-color: rgba(128, 128, 128, 0.5);">
+    
+      <div class="container px-5">
+        {% block content1 %}
+        {% endblock %}
+      </div>
+    
+      <!-- Load Bootstrap Optional JavaScript files -->
+      {% block scripts %}
+        {{ bootstrap.load_js() }}
+      {% endblock %}
+    </body>
+    
+    </html>
